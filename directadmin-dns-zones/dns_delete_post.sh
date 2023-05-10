@@ -50,7 +50,7 @@ class RestClient {
             'service' => 'PREMIUM',
             'master' => MASTER_IP,
         ]);
-        $result = $this->do_request("GET", "dns/zones?" . $query, json_encode($body));
+        $result = $this->do_request("GET", "dns/zones?" . $query);
 
         if (isset($result['entities']) && count($result['entities']) === 1) {
             return $result['entities'][0];
